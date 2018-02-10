@@ -20,16 +20,38 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 563,
     useContentSize: true,
-    width: 1000
+    width: 1000,
+    // frame: false,
+    // transparent: true
   })
+
+  let child = new BrowserWindow({parent: mainWindow,height:300,width:400});
+
+   // child.show();
+
 
   mainWindow.loadURL(winURL)
 
+
+  mainWindow.onbeforeunload = (e) => {
+        alert("是否关闭按钮");
+        e.returnValue = false
+  }
+
+    mainWindow.on('app-command', (e, cmd) => {
+        // 当用户点击鼠标返回按钮时，导航窗口会后退
+        if (cmd === 'browser-backward' && win.webContents.canGoBack()) {
+            win.webContents.goBack()
+        }
+    })
 
   mainWindow.on('closed', () => {
     mainWindow = null
   })
 }
+
+
+
 
 app.on('ready', createWindow)
 
