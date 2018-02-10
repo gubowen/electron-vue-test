@@ -1,12 +1,15 @@
 <template>
-    <div id="home">{{home}}</div>
+    <div id="home">
+        <div>{{home}}</div>
+        <div>{{$store.state.Counter.main}}</div>
+    </div>
 </template>
 <script>
     export default {
         name: 'home',
         data(){
             return {
-                home: "这是我的首页！"
+                home: "这是我的首页2！"
             }
         },
         mounted() {
@@ -14,8 +17,8 @@
         methods: {}
     }
 </script>
-<style lang="css" rel="stylesheet/css">
-    #home{
+<style lang="scss" rel="stylesheet/css">
+    #home {
         background: #fff;
     }
 </style>
