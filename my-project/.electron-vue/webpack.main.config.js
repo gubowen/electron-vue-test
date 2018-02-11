@@ -2,6 +2,8 @@
 
 process.env.BABEL_ENV = 'main'
 
+process.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES=1
+
 const path = require('path')
 const { dependencies } = require('../package.json')
 const webpack = require('webpack')

@@ -25,9 +25,9 @@ let rendererConfig = {
   entry: {
     renderer: path.join(__dirname, '../src/renderer/main.js')
   },
-  externals: [
-    ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
-  ],
+  // externals: [
+  //   ...Object.keys(dependencies || {}).filter(d => !whiteListedModules.includes(d))
+  // ],
   module: {
     rules: [
       {

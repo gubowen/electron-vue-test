@@ -25,7 +25,7 @@ function createWindow () {
     // transparent: true
   })
 
-  let child = new BrowserWindow({parent: mainWindow,height:300,width:400});
+ // let child = new BrowserWindow({parent: mainWindow,height:300,width:400});
 
    // child.show();
 
